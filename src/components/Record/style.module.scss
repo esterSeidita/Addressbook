@@ -1,0 +1,19 @@
+.Record {
+  padding: 1em;
+  margin: 10px 0;
+  box-shadow: 2px 1px 10px 1px rgb(0 0 0 / 39%);
+  -webkit-box-shadow: 2px 1px 10px 1px rgb(0 0 0 / 39%);
+  -moz-box-shadow: 2px 1px 10px 1px rgb(0 0 0 / 39%);
+  position: relative;
+
+  &__closeBtn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  &__Name{
+    text-transform: capitalize;
+  }
+}

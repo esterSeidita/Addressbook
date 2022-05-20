@@ -1,0 +1,7 @@
+@import "./utils/mixins.scss";
+
+.App {
+  @include flex($justify:space-around);
+  padding: 20px;
+  min-height: 100vh;
+}
