@@ -13,6 +13,9 @@ export default function Form({ sendInputs }) {
   const formSubmit = (e) => {
     e.preventDefault();
     sendInputs(inputs);
+    const localData = JSON.parse(localStorage.getItem("records"));
+    const newLocalData = localData !== null ? localData.concat([inputs]) : [inputs];
+    localStorage.setItem("records", JSON.stringify(newLocalData));
     setInputs({});
   };
 
@@ -53,9 +56,7 @@ export default function Form({ sendInputs }) {
             name="number"
           />
         </div>
-        {/* <div className={styles.Form__inputGroup}> */}
         <input className={styles.SumbitBtn} type="submit" value="Aggiungi" />
-        {/* </div> */}
       </form>
     </div>
   );

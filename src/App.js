@@ -12,14 +12,13 @@ function App() {
   const deleteRecord = (name) =>{
     const newRecords = data.filter((obj)=>obj.name !== name);
     setData(newRecords);
-    localStorage.setItem("records", JSON.stringify(newRecords));
+    const localData = JSON.parse(localStorage.getItem("records"));
+    const newLocalRecords = localData.filter((obj)=>obj.name !== name);
+    localStorage.setItem("records", JSON.stringify(newLocalRecords));
   }
 
   const getData = (data) => {
     setData((prev) => prev.concat([data]));
-    const localData = JSON.parse(localStorage.getItem("records"));
-    const newData = localData.concat([data]);
-    localStorage.setItem("records", JSON.stringify(newData));
   };
 
   const getFilterValue = (filter) => {
