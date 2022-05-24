@@ -1,14 +1,24 @@
-import {useState} from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./style.module.scss";
 
-export default function Filter({sendFilterValue}) {
-  const [filterValue, setFilterValue] = useState("");
+export default function Filter() {
+
+  const dispatch = useDispatch();
+  const filter = useSelector((store) => store.filter) || "";
+
   const onChange = (e) => {
     const value = e.target.value;
-    setFilterValue(value);
-    sendFilterValue(value);
-  }
-  return <div className={styles.Filter}>
-    <input placeholder="Ricerca per nome e cognome" type="text" onChange={onChange} value={filterValue} />
-  </div>;
+    dispatch({type: "UPDATE_STATES", payload: {key: "filter", value: value}})
+  };
+
+  return (
+    <div className={styles.Filter}>
+      <input
+        placeholder="Ricerca per nome e cognome"
+        type="text"
+        onChange={onChange}
+        value={filter}
+      />
+    </div>
+  );
 }

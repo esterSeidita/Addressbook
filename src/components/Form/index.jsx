@@ -1,13 +1,12 @@
 import { useState } from "react";
-import styles from "./style.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-// import state from "./../../store"
+
+import styles from "./style.module.scss";
 
 export default function Form() {
   const [inputs, setInputs] = useState({});
 
   const dispatch = useDispatch();
-  // const localData = useSelector(state => localStorage);
   const data = useSelector((state) => state.messages);
 
   const onChange = (e) => {

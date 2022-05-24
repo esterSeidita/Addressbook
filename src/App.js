@@ -7,37 +7,32 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 function App() {
-  const [data, setData] = useState([]);
   const [filter, setFilter] = useState("");
 
-  const deleteRecord = (name) => {
-    const newRecords = data.filter((obj) => obj.name !== name);
-    setData(newRecords);
-    const localData = JSON.parse(localStorage.getItem("records"));
-    const newLocalRecords = localData.filter((obj) => obj.name !== name);
-    localStorage.setItem("records", JSON.stringify(newLocalRecords));
-  };
+  // const deleteRecord = (name) => {
+  //   const localData = JSON.parse(localStorage.getItem("records"));
+  //   const newLocalRecords = localData.filter((obj) => obj.name !== name);
+  //   localStorage.setItem("records", JSON.stringify(newLocalRecords));
+  // };
 
-  const getData = (data) => {
-    setData((prev) => prev.concat([data]));
-  };
+  // const getData = (data) => {
+  //   setData((prev) => prev.concat([data]));
+  // };
 
-  const getFilterValue = (filter) => {
-    setFilter(filter);
-  };
+  // const getFilterValue = (filter) => {
+  //   setFilter(filter);
+  // };
 
   return (
     <Provider store={store}>
       <div className={styles.App}>
         <h1 className={styles.App__title}>AddressBook</h1>
         <main className={styles.App__mainWrapper}>
-          <Form sendInputs={getData} />
+          <Form/>
           <div className={styles.App__RecordsWrapper}>
-            <Filter sendFilterValue={getFilterValue} />
+            <Filter/>
             <RecordList
-              deleteRecord={deleteRecord}
               filter={filter}
-              data={data}
             />
           </div>
         </main>

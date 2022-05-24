@@ -1,5 +1,6 @@
-import styles from "./style.module.scss";
 import { useDispatch } from "react-redux";
+
+import styles from "./style.module.scss";
 
 export default function Record({ data }) {
   const dispatch = useDispatch();

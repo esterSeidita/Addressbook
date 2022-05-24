@@ -1,8 +1,9 @@
 import Record from "../Record";
 import { useSelector } from "react-redux";
 
-export default function RecordList({ filter }) {
+export default function RecordList() {
   const store = useSelector((store) => store.messages);
+  const filter = useSelector((store) => store.filter) || "";
   const localData =
     localStorage.getItem("recordList") !== null
       ? JSON.parse(localStorage.getItem("recordList"))
