@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Addressbook/static/css/main.3ebea50d.css",
-    "main.js": "/Addressbook/static/js/main.cf7b7b30.js",
+    "main.js": "/Addressbook/static/js/main.662d5315.js",
     "static/js/787.a55f4b90.chunk.js": "/Addressbook/static/js/787.a55f4b90.chunk.js",
     "index.html": "/Addressbook/index.html",
     "main.3ebea50d.css.map": "/Addressbook/static/css/main.3ebea50d.css.map",
-    "main.cf7b7b30.js.map": "/Addressbook/static/js/main.cf7b7b30.js.map",
+    "main.662d5315.js.map": "/Addressbook/static/js/main.662d5315.js.map",
     "787.a55f4b90.chunk.js.map": "/Addressbook/static/js/787.a55f4b90.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3ebea50d.css",
-    "static/js/main.cf7b7b30.js"
+    "static/js/main.662d5315.js"
   ]
 }
