@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.3ebea50d.css",
-    "main.js": "/static/js/main.cd60e566.js",
-    "static/js/787.a55f4b90.chunk.js": "/static/js/787.a55f4b90.chunk.js",
-    "index.html": "/index.html",
-    "main.3ebea50d.css.map": "/static/css/main.3ebea50d.css.map",
-    "main.cd60e566.js.map": "/static/js/main.cd60e566.js.map",
-    "787.a55f4b90.chunk.js.map": "/static/js/787.a55f4b90.chunk.js.map"
+    "main.css": "/Addressbook/static/css/main.3ebea50d.css",
+    "main.js": "/Addressbook/static/js/main.cf7b7b30.js",
+    "static/js/787.a55f4b90.chunk.js": "/Addressbook/static/js/787.a55f4b90.chunk.js",
+    "index.html": "/Addressbook/index.html",
+    "main.3ebea50d.css.map": "/Addressbook/static/css/main.3ebea50d.css.map",
+    "main.cf7b7b30.js.map": "/Addressbook/static/js/main.cf7b7b30.js.map",
+    "787.a55f4b90.chunk.js.map": "/Addressbook/static/js/787.a55f4b90.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3ebea50d.css",
-    "static/js/main.cd60e566.js"
+    "static/js/main.cf7b7b30.js"
   ]
 }
