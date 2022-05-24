@@ -1,8 +1,14 @@
 import { useState } from "react";
 import styles from "./style.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+// import state from "./../../store"
 
-export default function Form({ sendInputs }) {
+export default function Form() {
   const [inputs, setInputs] = useState({});
+
+  const dispatch = useDispatch();
+  // const localData = useSelector(state => localStorage);
+  const data = useSelector((state) => state.messages);
 
   const onChange = (e) => {
     const name = e.target.name;
@@ -12,11 +18,20 @@ export default function Form({ sendInputs }) {
 
   const formSubmit = (e) => {
     e.preventDefault();
-    sendInputs(inputs);
-    const localData = JSON.parse(localStorage.getItem("records"));
-    const newLocalData = localData !== null ? localData.concat([inputs]) : [inputs];
-    localStorage.setItem("records", JSON.stringify(newLocalData));
+    dispatch({ type: "ADD", payload: inputs });
+
     setInputs({});
+
+    dispatch({
+      type: "UPDATE_LOCALSTORAGE",
+      payload: { key: "recordList", value: inputs },
+    });
+
+    const localData =
+      localStorage.getItem("recordList") === null
+        ? data
+        : JSON.parse(localStorage.getItem("recordList"));
+    localStorage.setItem("recordList", JSON.stringify(localData.concat([inputs])));
   };
 
   return (

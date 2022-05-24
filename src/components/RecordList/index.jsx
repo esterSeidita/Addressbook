@@ -1,32 +1,25 @@
-import { useEffect, useState } from "react";
 import Record from "../Record";
+import { useSelector } from "react-redux";
 
-export default function RecordList({ deleteRecord, filter, data }) {
-  const [dataFiltered, setDataFiltered] = useState([]);
-  const localData = JSON.parse(localStorage.getItem("records"));
-  const localDataFiltered = JSON.parse(localStorage.getItem("recordsFiltered"));
-
-  useEffect(()=>{
-    setDataFiltered(data);
-    localStorage.setItem("recordsFiltered", JSON.stringify(localData));
-  }, [data])  
-  
-
-  useEffect(() => {
-    const filtered = localData.filter(
-      (record) =>
-        record.name.toLowerCase().includes(filter.toLowerCase()) ||
-        record.surname.toLowerCase().includes(filter.toLowerCase())
-    );
-    setDataFiltered(filtered);
-    localStorage.setItem("recordsFiltered", JSON.stringify(filtered));
-  }, [filter]);
+export default function RecordList({ filter }) {
+  const store = useSelector((store) => store.messages);
+  const localData =
+    localStorage.getItem("recordList") !== null
+      ? JSON.parse(localStorage.getItem("recordList"))
+      : store;
 
   return (
     <div>
-      {localDataFiltered !== null && localDataFiltered.map((obj, i) => (
-        <Record deleteRecord={deleteRecord} key={i} data={obj} />
-      ))}
+      {localData &&
+        localData
+          .filter(
+            (obj) =>
+              obj.name.toLowerCase().includes(filter.toLowerCase()) ||
+              obj.surname.toLowerCase().includes(filter.toLowerCase())
+          )
+          .splice(0)
+          .reverse()
+          .map((obj, i) => <Record key={i} data={obj} />)}
     </div>
   );
 }

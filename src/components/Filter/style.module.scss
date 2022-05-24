@@ -1,7 +1,9 @@
 .Filter {
   input {
     padding: 10px;
-    width: 500px;
-    border: 2px solid black;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
   }
 }
